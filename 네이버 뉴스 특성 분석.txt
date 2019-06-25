@@ -1,0 +1,49 @@
+note) 일부 뉴스 데이터는 멀티 라벨링이 되어있다.
+
+(정치) 		https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=100
+(경제) 		https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=101
+(사회) 		https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=102
+(생활) 		https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=103
+(세계) 		https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=104
+(과학) 		https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=105
+
+정치 관련 기사 	https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=022&aid=0003316085
+
+네이버 정책 상 최대 2개의 섹션 분류만 가능하다. 
+oid
+001 연합뉴스->다국어 뉴스가 이어서 패스 
+002 프레시안 
+003 뉴시스 ->선택
+https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=003&aid=0008894831(멀티라벨)
+008 머니투데이
+009 매일경제
+014 파이넨셜뉴스 -> 좁음
+015 한국경제 -> 좁음
+018 이데일리
+023 조선일보
+025 중앙일보 -> 선택 
+https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=101&oid=025&aid=0002861365
+==> sid1에 상관없이 oid와 aid만 맞으면 접근이 가능하다.
+029 디지털타임스
+https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=105&oid=029&aid=0002491841
+032 경향신문
+오마이뉴스 -> 시민기자로 인해 기사 질이 떨어짐
+
+
+
+---------------------
+데이터 선별 방법
+- 타이틀과 본문을 모두 선별함(input), 섹션 추출도 함(output)
+- 각 섹션별로 200개의 데이터를 추출한다.
+- 뉴시스와 중앙일보 데이터를 크롤링해서 cardinality가 높은 데이터를 선택한다.
+
+약간(?)의 문제: 11172글자는 너무한거 아니냐고
+
+
+
+<div class="ab_photo photo_center " >  <div class="image">    <span class="end_photo_org"><img src="https://imgnews.pstatic.net/image/025/2018/11/05/0002861365_001_20181105174249344.jpg?type=w647" /><em class="img_desc">박용만 대한상공회의소 회장이 5일 광주 라마다플라자호텔에서 열린 '2018년 전국 상공회의소 회장단 회의'에서 인사말을 하고 있다. [사진 대한상의]</em></span>  <span class="mask"></span>    </div>       </div>  <div class="ab_sub_heading" style="position:relative;margin-top:17px;margin-bottom:16px;padding-top:15px;padding-bottom:14px;border-top:1px solid #444446;border-bottom:1px solid #ebebeb;color:#3e3e40;font-size:20px;line-height:1.5;"><div class="dim" style="display: none;"><br> </div><div class="dim" style="display: none;">━<br> </div><div class="ab_sub_headingline" style="font-weight:bold;">  박용만 "국가가 허락한 사업만 하라는 건 기본권 침해" 일갈   </div><div class="dim" style="display: none;"><br> </div></div>   "정부에 규제개혁 리스트를 제출한 것만 39번입니다. 기업이 일을 벌이도록 분위기를 만들어야 하는데…. 이를 어디다 하소연해야 합니까."  <br>      <br>   5일 박용만 대한상공회의소 회장은 20여분 간의 기자간담회 도중 여러 차례 한숨을 내쉬었다. 올해 전국 상공회의소 회장단 회의차 광주 라마다플라자호텔을 찾은 자리에서다. 그의 한숨은 기업 규제에 관해 이야기할 때마다 이어졌다.   <br>   박 회장은 "생명·안전 규제는 더 강화돼야 하지만 다른 상당수 규제는 국민 기본권을 침해하는 수준까지 갔다"며 "기업뿐 아니라 소상공인·창업자들도 국가가 허락해 준 사업만 하라는 건 기본권 침해가 아니냐"라고 일갈했다.  <br>      <br>   국내 상공인을 대표하는 대한상의 전국 회장단 회의 자리는 '정부 규제 성토의 장'이었다. 재계는 한국 경제가 중·장기적인 저성장의 늪으로 빠져드는 길목에서 규제 완화가 돌파구가 될 수 있다고 본다. 그러나 특정 지역에 규제 특례를 허용하는 규제 프리존 특별법이나 네거티브 규제(금지한 것 외엔 모두 허용)를 핵심으로 하는 행정규제 기본법 등은 여전히 국회 계류 중이다. 이들 법안은 재계가 요구하는 규제 완화의 핵심 정책이다.   <br>   40여 명의 전국 상의 회장단은 이날 회의에서 기업 규제의 '공수(攻守) 교대'를 요구했다. 기업이 규제 완화를 요구하고 규제 당국의 답변을 수동적으로 듣는 게 아니라, 정부가 정당성을 설명하지 못하면 규제 완화 요구를 들어주는 구도가 돼야 한다고 강조했다.  <br>      <br>   재계가 규제 완화를 촉구하는 배경에는 경기 침체에 대한 불안 심리가 깔려 있다. 대한상의가 지난 1일 개최한 한 콘퍼런스에서 글로벌 맥킨지 연구소는 한국 경제성장률은 지금 같은 추세가 계속될 경우 2030년이 되면 2.1~2.6%대를 벗어나기 어려울 것이란 예측 결과를 발표했다. 같은 기간 2.4~3.2%대로 전망되는 글로벌 경제성장률 예상치보다 저조할 것이란 관측이다.  <br>      <br>  <div class="ab_sub_heading" style="position:relative;margin-top:17px;margin-bottom:16px;padding-top:15px;padding-bottom:14px;border-top:1px solid #444446;border-bottom:1px solid #ebebeb;color:#3e3e40;font-size:20px;line-height:1.5;"><div class="dim" style="display: none;"><br> </div><div class="dim" style="display: none;">━<br> </div><div class="ab_sub_headingline" style="font-weight:bold;">  "규제 완화 안돼 사업에 반영도 못해…규제 '골든타임'이 지났다"   </div><div class="dim" style="display: none;"><br> </div></div>   재계는 이런 추세에선 진보한 기술을 활용해 자유롭게 사업을 펼칠 수 있도록 하는 것이 중요하다고 강조한다. 산업 간 칸막이를 허물어 새로운 먹거리를 창출할 수 있으려면 규제 완화가 선행돼야 한다는 것이다.   <br>   박용만 회장은 "구조적인 하락세가 전망되는 한국 경제 현실에서는 혁신 기반을 다시 구축하는 것이 가장 중요하다"며 "높은 제조 역량을 내세워 노동과 자본 투입을 늘리는 양적 성장 방식보다는 기술 진보와 산업간 융합을 통한 질적 성장을 도모해야 한다"고 강조했다.  <br>      <br>   한형기 충남북부상의 회장도 "중소기업들은 지금 이맘때 내년도 사업 방향을 정하는 데, 규제 완화 결과를 알 수 없다 보니 이를 사업에 반영하지도 못하고 있다"며 "기업 규제 개혁의 '골든 타임'이 지나가고 있는 것 같다"고 말했다.  <br>      <br>   <div class="ab_photo photo_center " >  <div class="image">    <span class="end_photo_org"><img src="https://imgnews.pstatic.net/image/025/2018/11/05/0002861365_002_20181105174249399.jpg?type=w647" /><em class="img_desc">박용만 대한상공회의소 회장이 5일 광주 라마다플라자호텔에서 열린 '2018년 전국 상공회의소 회장단 회의'에 참석해 회의를 주제하고 있다. 이날 회장단은 정부의 조속한 규제 완화 입법을 촉구했다. [사진 대한상의]</em></span>  <span class="mask"></span>    </div>       </div>  <div class="ab_sub_heading" style="position:relative;margin-top:17px;margin-bottom:16px;padding-top:15px;padding-bottom:14px;border-top:1px solid #444446;border-bottom:1px solid #ebebeb;color:#3e3e40;font-size:20px;line-height:1.5;"><div class="dim" style="display: none;"><br> </div><div class="dim" style="display: none;">━<br> </div><div class="ab_sub_headingline" style="font-weight:bold;">  지역 상의 "소득주도 성장, 지역 어려움 이해해야"   </div><div class="dim" style="display: none;"><br> </div></div>   소득주도 성장 기조에 대한 변화를 촉구하는 목소리도 이어졌다. 문재인 대통령은 지난 1일 국회 시정연설에서 소득주도 성장 기조를 유지할 방침을 밝혔다. 그러나 재계는 분배 정책의 목표를 성장으로 정하고 있는 소득주도 성장 정책으로는 분배는 물론 성장도 실패할 가능성이 크다는 의견을 내놓는다. 박 회장은 "(성장과 분배) 두 마리 토끼는 둘 중 하나를 취사선택할 문제가 아니다"라고 전제한 뒤 "다만 분배 문제는 민간의 비용 부담을 늘리기보다 사회 안전망 확충 등 직접적인 분배 정책을 활용하는 것이 바람직하다"고 말했다. 소득주도 성장 기조를 에둘러 비판한 것이다.   <br>      <br>   이두영 청주상의 회장도 "중앙 정부가 수도권과 지방의 소득 격차를 전혀 느끼지 못하는 것 아닌가 한다"며 "지역에 차등을 두지 않은 최저임금 인상 정책으로 수많은 지역 상공인이 어려움을 겪어선 곤란하다"고 지적했다.  <br>      <br>   이재하 대구상의 회장은 "무역 거래가 막힌 사회에선 소득주도 성장이 가능할 수도 있지만, 수출로 먹고사는 나라에선 결국 수출이 주도해야 소상공인도 잘살아나갈 수 있다"며 "국정 철학도 중요하지만 시장 상황을 살피면서 속도를 조절해야 할 것"이라고 강조했다.  <br>      <br>  <div class="ab_sub_heading" style="position:relative;margin-top:17px;margin-bottom:16px;padding-top:15px;padding-bottom:14px;border-top:1px solid #444446;border-bottom:1px solid #ebebeb;color:#3e3e40;font-size:20px;line-height:1.5;"><div class="dim" style="display: none;"><br> </div><div class="dim" style="display: none;">━<br> </div><div class="ab_sub_headingline" style="font-weight:bold;">  "규제 혁파하면서 사회안전망 확충하는 방향으로 가야"   </div><div class="dim" style="display: none;"><br> </div></div>   재계는 물론 전문가 일각에서도 정부가 단기적인 경기·일자리 지표에 연연한 일시적 처방보다는 중·장기적인 대책에 집중해야 한다는 지적이 나왔다. 기존 정책 기조를 고집하기보다는 저성장 기조에서 탈출할 수 있도록 과감한 정책 변화를 시도할 필요가 있다는 것이다.   <br>      <br>   조장옥 서강대 명예교수는 이날 서울 전경련회관에서 열린 한국경제연구원 주최 세미나에서 "최저임금 인상과 노동시간 단축, 법인세 인상 등 성장률을 잠식하는 조치가 빠르게 이뤄지는 가운데, 정책 책임자들의 안이한 경제 운용으로 저소득층 고통마저 가중되고 있다"며 "규제 혁파와 노동 개혁을 시도하면서 사회안전망을 확충해 나가는 방향으로 경제를 운용해야 한다"고 지적했다.  <br>      <br>   정민 현대경제연구원 연구위원도 "국내 주력 산업은 투자가 부진해지면서 성장세가 정체되고 있다"며 "'혁신 성장'이 가시화되도록 시장 진·출입과 투자 관련 규제를 완화하고, 신성장 동력의 발굴을 위한 정부의 적극적인 대응이 필요하다"고 강조했다.  <br>      <br>   광주=김도년·윤정민 기자 kim.donyun@joongang.co.kr  <br><br><br>▶ <a href="https://joongang.co.kr" target="_blank">중앙일보 '홈페이지'</a> / <a href="https://www.facebook.com/joongang" target="_joins_nw">'페이스북' 친구추가</a><br>▶<a href="https://ssully.joins.com/?ch=bulk" target="_blank"> 이슈를 쉽게 정리해주는 '썰리'</a><br><br>ⓒ중앙일보(https://joongang.co.kr), 무단 전재 및 재배포 금지
+	
+
+
+
+

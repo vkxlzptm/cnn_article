@@ -1,0 +1,7 @@
+.vscode/
+crawling/*.pkl
+crawling/*.txt
+feature/
+log
+ml/
+prui_news_data_total.pkl
